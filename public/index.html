@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del ahorcado</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Ahorcado</h1>
+    <section id="tablaPosicionesContainer" >
+        <h2>Tabla de Posiciones</h2>
+        <table id="tablaPosiciones">
+            <thead>
+                <tr>
+                    <th>Posición</th>
+                    <th>Nombre</th>
+                    <th>Puntos</th>
+                    <th>Tiempo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="row1">
+                    <td>1</td>
+                    <td id="nombre1"></td>
+                    <td id="puntos1"></td>
+                    <td id="tiempo1"></td>
+                </tr>
+                <tr id="row2">
+                    <td>2</td>
+                    <td id="nombre2"></td>
+                    <td id="puntos2"></td>
+                    <td id="tiempo2"></td>
+                </tr>
+                <tr id="row3">
+                    <td>3</td>
+                    <td id="nombre3"></td>
+                    <td id="puntos3"></td>
+                    <td id="tiempo3"></td>
+                </tr>
+                <tr id="row4">
+                    <td>4</td>
+                    <td id="nombre4"></td>
+                    <td id="puntos4"></td>
+                    <td id="tiempo4"></td>
+                </tr>
+                <tr id="row5">
+                    <td>5</td>
+                    <td id="nombre5"></td>
+                    <td id="puntos5"></td>
+                    <td id="tiempo5"></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <main>
+        <div class="container_letras">
+            <h2>Letras</h2>
+            <div id="letras"></div>
+        </div>
+        <section class="container">
+            <div id="loader">
+                <div class="loader_container">
+                    <h1>Ahorcadaso</h1>
+                    <h3>Joaquin Fernadez</h3>
+                    <button id="jugar">Jugar</button>
+                </div>
+            </div>
+            <div id="container">
+                <div id="tiempo">Tiempo: 0s</div>
+                <div id="vidas"></div>
+                <canvas id="ahorcadoCanvas" width="300" height="300"></canvas>
+                <div id="palabra"></div>
+                <div id="puntosContainer">
+                    <span id="puntos">Puntos: 0</span>
+                </div>
+                <div id="mensaje" class="hidden">
+                    <p id="mensaje-texto"></p>
+                    <button id="continuar">Continuar</button>
+                    <button id="salir">Salir</button>
+                </div>
+            </div>
+        </section>
+        <section id="messageContainer" class="hidden">
+            <h2>Menu</h2>
+            <p id="message"></p>
+            <button id="continueButton" disabled>Continuar</button>
+            <button id="exitButton">Salir</button>
+        </section>
+    </main>
+    <script src="ahorcado.js"></script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    background: #f4f4f4;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 20px;
+    width: min(1200px, 100%);
+}
+
+.container {
+    padding: 0 15px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    background: #fff;
+    width: min(600px, 100%);
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    border: 4px solid #6c757d;
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 20;
+    transition: opacity 0.5s ease-out;
+    opacity: 1;
+}
+
+#loader.hidden {
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.loader_container {
+    background: #e9ecef;
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    border-radius: 10px;
+    color: #495057;
+    gap: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.loader_container h1 {
+    color: #495057;
+}
+
+h1 {
+    font-size: 48px;
+    color: #212529;
+}
+
+#palabra {
+    font-size: 24px;
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+}
+
+#letras {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.letra {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    margin: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    user-select: none;
+    background: #f8f9fa;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.letra.usada {
+    background: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+#ahorcadoCanvas {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+}
+
+#jugar {
+    font-size: 16px;
+    padding: 12px 24px;
+    font-weight: 500;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#jugar:hover {
+    background: #0056b3;
+}
+
+.vida {
+    width: 28px;
+    height: 22px;
+    margin: 4px;
+    display: inline-block;
+    clip-path: path("M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z");
+}
+
+.verde {
+    background: #28a745;
+}
+
+.rojo {
+    background: #dc3545;
+}
+
+.container_letras {
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    width: min(600px, 100%);
+    text-align: center;
+    border: 4px solid #6c757d;
+}
+
+.hidden {
+    display: none;
+}
+
+#messageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 200px;
+    text-align: center;
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    border: 4px solid #6c757d;
+}
+
+#message {
+    font-size: 20px;
+    color: #212529;
+}
+
+#continueButton, #exitButton, #restartButton {
+    font-size: 16px;
+    padding: 8px 16px;
+    font-weight: 500;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#nombreJugador {
+    outline: 0;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+#sumbitButton {
+    font-size: 16px;
+    padding: 8px 16px;
+    font-weight: 500;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#continueButton:disabled, #exitButton:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+#continueButton:hover:not(:disabled), #exitButton:hover:not(:disabled) {
+    background: #0056b3;
+}
+
+#tablaPosicionesContainer {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 8px;
+    text-align: center;
+    padding: 15px 20px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    border: 4px solid #6c757d;
+    margin-bottom: 30px;
+}
+
+#tablaPosiciones thead tr th {
+    padding-right: 10px;
+}

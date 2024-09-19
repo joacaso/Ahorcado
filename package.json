@@ -1,0 +1,14 @@
+{
+    "name": "ahorcado-api",
+    "version": "1.0.0",
+    "description": "API para el juego del Ahorcado",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "express-async-handler": "^1.2.0",
+        "mysql2": "^3.11.0"
+    }
+}
